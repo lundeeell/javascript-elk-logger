@@ -1,8 +1,8 @@
 # javascript-elk-logger
-ELK setup for logging JavaScript
+Logging setup for JavaScript using the Docker and the ELK-stack.
 
 # Instructions
-Start docker containers using docker-compose up
+Start docker containers using 'docker-compose up'
 
 Add logging to your code, for example:
 
