@@ -1,0 +1,17 @@
+{
+  "name": "servermonitor",
+  "version": "1.0.0",
+  "description": "Server monitor",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Simon Lundell",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "bunyan": "^1.8.1",
+    "elasticsearch": "^11.0.1",
+    "express": "^4.13.4"
+  }
+}

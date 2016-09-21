@@ -1,0 +1,29 @@
+version: '2'
+services:
+  elasticsearch:
+    image: elasticsearch:latest
+    command: elasticsearch -Des.network.host=0.0.0.0
+    ports:
+      - "9200:9200"
+      - "9300:9300"
+  kibana:
+    image: kibana
+    ports:
+      - "5601:5601"
+    links:
+      - elasticsearch
+  logstash:
+    image: logstash:latest
+    command: logstash -f /usr/src/logstash/conf.d/logstash.conf
+    volumes:
+      - ./logstash/config:/usr/src/logstash/conf.d
+    ports:
+      - "5000:5000"
+    links:
+      - elasticsearch
+  webserver:
+    build: ./app/.
+    ports:
+      - "5001:8080"
+    volumes:
+      - ./app:/usr/src/app
